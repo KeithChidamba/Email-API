@@ -33,7 +33,7 @@ app.post("/email", async (req, res) => {
         text,
         html
       };
-    transporter.sendMail(mailOptions, (error, info) => {
+    await transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.error("Error sending email: ", error);
         } else {
